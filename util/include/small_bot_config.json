@@ -1,24 +1,27 @@
 {
     "mean_gyro_val": 0.532,
-    "min_gyro_val": -4,
+    "min_gyro_val": -3,
     "max_gyro_val": 5,
-    "raw_to_360_degrees": 7.5122,
+    "raw_to_360_degrees": 8.015,
     "gyro_cw_multiplier": -1,
     "gyro_linear_accel": 500.0,
     "gyro_updates_per_sec": 200,
     "gyro_correction_proportion": 0.9,
     "gyro_turn_v2_min_speed": 11,
+
     "linear_accel": 500.0,
     "sinusoidal_accel": 500.0,
     "accelerate_updates_per_sec": 500,
-    "black": 2000,
+
     "line_follow_updates_per_sec": 500,
     "line_follow_correction_proportion": 0.9,
     "line_follow_linear_acceleration": 500,
     "line_follow_sinusoidal_acceleration": 500,
     "line_follow_stop": true,
+
     "align_updates_per_sec": 500,
     "align_stop": true,
+
     "roomba_correction_proportion": 0.85,
     "roomba_updates_per_sec": 500,
     "roomba_accel_per_sec": 500.0,
@@ -26,6 +29,38 @@
     "roomba_stop": true,
     "roomba_left_wheel_units": 0.11,
     "roomba_right_wheel_units": 0.103,
+
     "servo_movement_speed": 200,
-    "servo_updates_per_sec": 100
+    "servo_updates_per_sec": 100,
+
+    "gmpc_right_coe": 3700,
+    "gmpc_left_coe": 3700,
+
+    "leftMotor": 0,
+    "rightMotor": 1,
+    "arm": 2,
+    "claw": 1,
+    "latch": 3,
+    "frontLTopHat": 1,
+    "frontRTopHat": 0,
+    "backTopHat": 2,
+    "black": 3200,
+    "white": 2500,
+    "blackBack": 3960,
+    "grayHigh": 3100,
+    "grayLow": 3000,
+
+    "posix_cpy": "/queue1",
+    "shm": 345,
+
+    "closedPong": 800,
+    "openPong": 500,
+    "upPong": 790,
+    "downPong": 70,
+    "closedFirewall": 550,
+    "downFirewall": 0,
+    "upFirewall": 370,
+    "openFirewall": 230,
+    "wiresharkOn": 375,
+    "wiresharkOff": 1300 
 }

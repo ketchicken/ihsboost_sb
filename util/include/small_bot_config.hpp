@@ -30,7 +30,7 @@
 
 // gyro configs
 #ifndef GYRO_FUNCTION
-#define GYRO_FUNCTION gyro_y ///< the function to use for gyro movement, must return a signed short
+#define GYRO_FUNCTION gyro_z ///< the function to use for gyro movement, must return a signed short
 #endif
 
 #endif

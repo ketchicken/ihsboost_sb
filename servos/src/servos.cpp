@@ -19,3 +19,17 @@ void move_servo_slowly(int port, int position, int speed, int updates_per_sec)
     set_servo_position(port, position);
     disable_servo(port);
 }
+
+void servo(int port, int position, int step){
+    enable_servo(port);
+    while(get_servo_position(port) < position){
+        set_servo_position(port, get_servo_position(port) + step);
+        msleep(step);
+    }
+    while(get_servo_position(port) > position){
+        set_servo_position(port, get_servo_position(port) - step);
+        msleep(step);
+    }
+    set_servo_position(port, position);
+    disable_servo(port);
+}

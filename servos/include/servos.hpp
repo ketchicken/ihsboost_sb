@@ -24,6 +24,7 @@
  * @param updates_per_sec How many updates to do per second, defaults to 100
  */
 void move_servo_slowly(int port, int position, int speed = get_config().getInt("servo_movement_speed"), int updates_per_sec = get_config().getInt("servo_updates_per_sec"));
+void servo(int port, int position, int step);
 
 #endif
 /**@}*/
