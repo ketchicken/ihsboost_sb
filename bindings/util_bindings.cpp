@@ -11,6 +11,11 @@ namespace util_export
         o << "(" << s.left << ", " << s.right << ")";
         return o.str();
     }
+
+    std::string get_version()
+    {
+        return IHSBOOST_VERSION;
+    }
 }; // namespace util_export
 
 void export_util()
@@ -28,7 +33,7 @@ void export_util()
         .def("__repr__", print_speed);
     class_<Timer>("Timer", init<double>(arg("time")))
         .def("__call__", &Timer::operator())
-        .def("done", &Timer::operator());
+        .def("done", &Timer::done);
     enum_<Cliff>("Cliff")
         .value("LCliff", Cliff::LCliff)
         .value("LFCliff", Cliff::LFCliff)
@@ -39,4 +44,5 @@ void export_util()
         .value("RightSide", LineSide::RightSide);
     def("set_extra_config", set_extra_config);
     def("set_default_config", set_default_config);
+    def("get_version", get_version);
 }

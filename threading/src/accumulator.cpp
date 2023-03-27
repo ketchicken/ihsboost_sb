@@ -2,13 +2,10 @@
 #include <kipr/wombat.h>
 
 Accumulator::Accumulator(std::function<double()> callable, int updates_per_sec)
-    : BackgroundTask(updates_per_sec), callable(callable), t(nullptr),
+    : BackgroundTask(updates_per_sec), callable(callable),
       accumulator(0), multiplier(1 / static_cast<double>(updates_per_sec)){};
 
-Accumulator::~Accumulator()
-{
-    BackgroundTask::~BackgroundTask();
-}
+Accumulator::~Accumulator() {}
 
 void Accumulator::function()
 {

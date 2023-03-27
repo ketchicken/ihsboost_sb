@@ -13,7 +13,6 @@
 #ifndef IHSBOOST_ACCUMULATOR_HPP
 #define IHSBOOST_ACCUMULATOR_HPP
 
-#include "threadable.hpp"
 #include "background_task.hpp"
 #include <functional>
 
@@ -39,7 +38,7 @@ public:
      * @brief Destroy the Accumulator object
      * @details cleans up any accumulating that is currently being done
      */
-    ~Accumulator();
+    virtual ~Accumulator();
 
     /**
      * @brief Change how many updates per second this accumulator does
@@ -66,7 +65,6 @@ protected:
 
 private:
     std::function<double()> callable;
-    Threadable<void(Accumulator *a), Accumulator *> *t;
     volatile double accumulator;
 
     double multiplier;
