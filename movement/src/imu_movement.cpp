@@ -90,7 +90,7 @@ void gyro_turn_degrees_v2(int max_speed, double degrees, int min_speed, double a
     int left_sign = (degrees > 0) ? 1 : -1;
     int right_sign = (degrees > 0) ? -1 : 1;
 
-    gyro_accumulator.start_accumulating();
+    gyro_accumulator.start();
 
     // accelerating part of the turn, capped at 1/2 of the turn that way, if it didn't have enough time to accelerate,
     // it will still have enough time to decelerate from its current speed
@@ -133,5 +133,5 @@ void gyro_turn_degrees_v2(int max_speed, double degrees, int min_speed, double a
     // stop at the end
     MOVEMENT_FUNCTION(0, 0);
 
-    gyro_accumulator.stop_accumulating();
+    gyro_accumulator.stop();
 }

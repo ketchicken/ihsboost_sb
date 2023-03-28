@@ -23,7 +23,7 @@ namespace movement_export
     {
         line_follow_accelerate_sinusoidal(f, t, cl, l, fn, s, co, a, b, u);
     }
-
+/*
     double (*encoder_drive_straight_cm)(int, double, bool, int, double, double, int) = encoder_drive_straight;
     double encoder_drive_straight_fn(int s, object fn, bool stop, double c, int u)
     {
@@ -44,16 +44,15 @@ namespace movement_export
     int get_start_renc_delta(EncoderSubscriber *e)
     {
         return e->get_start_renc_delta();
-    }
+    }*/
 } // namespace movement_export
-
 void export_movement()
 {
     using namespace movement_export;
     using namespace boost::python;
 
     // movement
-    class_<GyroSubscriber>("GyroSubscriber", init<int>())
+    /*class_<GyroSubscriber>("GyroSubscriber", init<int>())
         .def("get_start_angle", get_start_angle)
         .def("get_relative_angle", &GyroSubscriber::get_relative_angle);
     class_<EncoderSubscriber>("EncoderSubscriber", init<int>())
@@ -64,7 +63,7 @@ void export_movement()
         .def("get_relative_left_distance", &EncoderSubscriber::get_relative_left_distance)
         .def("get_relative_right_distance", &EncoderSubscriber::get_relative_right_distance)
         .def("get_relative_distance", &EncoderSubscriber::get_relative_distance)
-        .def("get_relative_angle", &EncoderSubscriber::get_relative_angle);
+        .def("get_relative_angle", &EncoderSubscriber::get_relative_angle);*/
     def("accelerate_forward_linear", accelerate_forward_linear, (arg("from_speed"), arg("to_speed"), arg("accel_per_sec"), arg("updates_per_sec")));
     def("accelerate_forward_sin", accelerate_forward_sin, (arg("from_speed"), arg("to_speed"), arg("avg_accel_per_sec"), arg("updates_per_sec")));
     def("accelerate_linear", accelerate_linear, (arg("from_speed"), arg("to_speed"), arg("accel_per_sec"), arg("updates_per_sec")));
@@ -79,10 +78,10 @@ void export_movement()
     def("line_follow_accelerate_sinusoidal", line_follow_accelerate_sinusoidal_fn, (arg("from_speed"), arg("to_speed"), arg("cliff_sensor"), arg("line_side"), arg("stop_condition"), arg("stop") = get_config().getBool("line_follow_stop"), arg("correction_proportion") = get_config().getDouble("line_follow_correction_proportion"), arg("accel_per_sec") = get_config().getDouble("line_follow_sinusoidal_acceleration"), arg("black_val") = get_config().getInt("black"), arg("updates_per_sec") = get_config().getInt("line_follow_updates_per_sec")));
     def("align_with_black", align_with_black, (arg("speed"), arg("correction_speed"), arg("cliff_sensor_l"), arg("cliff_sensor_r"), arg("stop") = get_config().getBool("align_stop"), arg("updates_per_second") = get_config().getInt("align_updates_per_sec")));
     def("align_with_white", align_with_white, (arg("speed"), arg("correction_speed"), arg("cliff_sensor_l"), arg("cliff_sensor_r"), arg("stop") = get_config().getBool("align_stop"), arg("updates_per_second") = get_config().getInt("align_updates_per_sec")));
-    def("rotate", rotate, (arg("leftWheelSpeed"), arg("rightWheelSpeed"), arg("angle"), arg("left_wheel_units") = get_config().getDouble("roomba_left_wheel_units"), arg("right_wheel_units") = get_config().getDouble("roomba_right_wheel_units")));
+    /*def("rotate", rotate, (arg("leftWheelSpeed"), arg("rightWheelSpeed"), arg("angle"), arg("left_wheel_units") = get_config().getDouble("roomba_left_wheel_units"), arg("right_wheel_units") = get_config().getDouble("roomba_right_wheel_units")));
     def("encoder_drive_straight_cm", encoder_drive_straight_cm, (arg("speed"), arg("cm"), arg("stop") = get_config().getBool("roomba_stop"), arg("min_speed") = get_config().getInt("roomba_min_speed"), arg("correction_proportion") = get_config().getDouble("roomba_correction_proportion"), arg("accel_per_sec") = get_config().getDouble("roomba_accel_per_sec"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
     def("encoder_drive_straight_fn", encoder_drive_straight_fn, (arg("speed"), arg("condition"), arg("stop") = get_config().getBool("roomba_stop"), arg("correction_proportion") = get_config().getDouble("roomba_correction_proportion"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
     def("encoder_drive_straight_pid", encoder_drive_straight_pid, (arg("speed"), arg("cm"), arg("proportional_coefficient"), arg("integral_coefficient"), arg("derivative_coefficient"), arg("stop") = get_config().getBool("roomba_stop"), arg("min_speed") = get_config().getInt("roomba_min_speed"), arg("accel_per_sec") = get_config().getDouble("roomba_accel_per_sec"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
     def("encoder_turn_degrees", encoder_turn_degrees_v1, (arg("turn_speed"), arg("degrees"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
-    def("encoder_turn_degrees_v2", encoder_turn_degrees_v2, (arg("max_speed"), arg("degrees"), arg("min_speed") = get_config().getInt("roomba_min_speed"), arg("accel_per_sec") = get_config().getDouble("roomba_accel_per_sec"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
+    def("encoder_turn_degrees_v2", encoder_turn_degrees_v2, (arg("max_speed"), arg("degrees"), arg("min_speed") = get_config().getInt("roomba_min_speed"), arg("accel_per_sec") = get_config().getDouble("roomba_accel_per_sec"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));*/
 }
