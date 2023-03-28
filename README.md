@@ -32,7 +32,7 @@ from terminal inside the ihsboost directory on the wombat
 ```shell
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j4
+make -j1
 sudo make install
 ```
 
