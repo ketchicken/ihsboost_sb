@@ -17,6 +17,8 @@
 #include "speed.hpp"
 #include <functional>
 
+double get_gyro_val();
+
 /**
  * @brief Drive the create straight using the gyroscope
  *
