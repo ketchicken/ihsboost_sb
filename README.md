@@ -1,7 +1,37 @@
-# IHS Boost
+
+# SB_IHSBOOST
+The version of IHSBOOST found here is modified to be more suitable for small bot, including sbl.h, the small bot library for functions using gmpc(). 
 ![CMake Build](https://github.com/ihsrobotics/ihsboost/actions/workflows/cmake.yml/badge.svg)
 
-The ihs library of robot functions, optimized for all bots not of the Create kind. 
+## sbl.h
+ sbl.h consists of movement functions based on the amount of ticks per motor
+ > ##### `brake()`
+ > - sets the velocity of the motors in port 0 and 1 to 0
+ > - Stops the bot and prevents extra movement from remaining momentum
+ > 
+ > ##### `stop(int time)`
+ > - Stops all motors, servos, etc for the amount of time
+ > - uses ao() to stop all.
+ > 
+ > ##### `calib_gmpc()`
+ > - calibrates the amount of ticks the motor must turn to complete one whole revolution
+ > - uses gyro to calibrate
+ > - run it in int main and change the values in stl.h to reflect the values that are calculated 
+ > 
+ > ##### `turn_l_pivot(int degrees, *unsigned int* speed)` and `turn_r_pivot(int degrees, unsigned int speed)`
+ > - turns a certain amount of degrees around either the left (l) or right (r) wheel
+ > - uses mpc/ticks
+ > - Negative degrees turn counterclockwise, Positive degrees turn clockwise
+ > 
+ > ##### `spin(int degrees, unsigned int speed)`
+ > - turns both wheels until it reaches the angle specified in degrees
+ > - uses mpc/ticks
+ > - Negative degrees turn counterclockwise, Positive degrees turn clockwise.
+ > 
+ > ###### `straight_gmpc(int displacement, unsigned int speed)`
+ >  - displacement is the distance you want the bot to travel, speed how fast you want the bot to travel
+ >  - one displacement is a little more than an inch
+
 ## Installing
 ### Dependencies
 Some ihsboost modules have dependencies. The format below is dependency - modules - installation instructions
