@@ -6,7 +6,8 @@ if (${build_movement})
 
     # sources
     set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/accelerate.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/line_follow.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/imu_movement.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/roomba_movement.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/imu_movement.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/roomba_movement.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/sbl.cpp)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
     # include dependencies
@@ -25,6 +26,6 @@ if (${build_movement})
     get_property(local_install_path GLOBAL PROPERTY install_path)
     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/accelerate.hpp ${CMAKE_CURRENT_SOURCE_DIR}/include/imu_movement.hpp 
         ${CMAKE_CURRENT_SOURCE_DIR}/include/line_follow.hpp ${CMAKE_CURRENT_SOURCE_DIR}/include/roomba_movement.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/movement.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/movement.hpp ${CMAKE_CURRENT_SOURCE_DIR}/include/sbl.hpp
         DESTINATION ${local_install_path})
 endif()

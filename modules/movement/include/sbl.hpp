@@ -38,7 +38,7 @@ void stop_for_ms(int time_in_milliseconds);
 void turn_l_pivot(int degrees, unsigned int speed);
 void turn_r_pivot(int degrees, unsigned int speed);
 void spin(int degrees, unsigned int speed); //ccw is negative, cw is positive degrees
-void straight(int displacement, unsigned int speed);
+void straight_gmpc(int displacement, unsigned int speed);
 
 /**
  * @brief align until both tophats are on target values 

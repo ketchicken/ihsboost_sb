@@ -66,7 +66,7 @@ void export_movement()
         .def("get_relative_left_distance", &EncoderSubscriber::get_relative_left_distance)
         .def("get_relative_right_distance", &EncoderSubscriber::get_relative_right_distance)
         .def("get_relative_distance", &EncoderSubscriber::get_relative_distance)
-        .def("get_relative_angle", &EncoderSubscriber::get_relative_angle);
+        .def("get_relative_angle", &EncoderSubscriber::get_relative_angle);*/
     def("accelerate_forward_linear", accelerate_forward_linear, (arg("from_speed"), arg("to_speed"), arg("accel_per_sec") = get_config().getDouble("linear_accel"), arg("updates_per_sec") = get_config().getInt("accelerate_updates_per_sec")));
     def("accelerate_forward_sin", accelerate_forward_sin, (arg("from_speed"), arg("to_speed"), arg("avg_accel_per_sec") = get_config().getDouble("sinusoidal_accel"), arg("updates_per_sec") = get_config().getInt("accelerate_updates_per_sec")));
     def("accelerate_linear", accelerate_linear, (arg("from_speed"), arg("to_speed"), arg("accel_per_sec") = get_config().getDouble("linear_accel"), arg("updates_per_sec") = get_config().getInt("accelerate_updates_per_sec")));
@@ -88,3 +88,4 @@ void export_movement()
     def("encoder_turn_degrees", encoder_turn_degrees_v1, (arg("turn_speed"), arg("degrees"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));
     def("encoder_turn_degrees_v2", encoder_turn_degrees_v2, (arg("max_speed"), arg("degrees"), arg("min_speed") = get_config().getInt("roomba_min_speed"), arg("accel_per_sec") = get_config().getDouble("roomba_accel_per_sec"), arg("updates_per_sec") = get_config().getInt("roomba_updates_per_sec")));*/
 }
+#endif
